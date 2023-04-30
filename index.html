@@ -6,8 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Gallery</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .dark{
+            background: linear-gradient(to right,#080808,#474848);
+        }
+    </style>
 </head>
 <body>
+    <button>Dark Mode</button>
     <div class="container">
         <div class="left_container">
             <h2 class="heading">My Own Photo Gallery</h2>
@@ -23,5 +29,25 @@
             <div class="box column-2" style='background-image: url("https://images.unsplash.com/photo-1679214523482-231359cf68f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80");'>Beach</div>
         </div>
     </div>
+    <script>
+        const btn = document.querySelector("button")
+        const body = document.querySelector("body")
+        btn.addEventListener("click",e =>{
+            e.preventDefault()
+
+            if(btn.textContent.includes("Dark")){
+                body.classList.add("dark")
+                btn.textContent ="Light Mode"
+                btn.style.backgroundColor="#daf08d"
+                btn.style.color="black"
+            }
+            else{
+                body.classList.remove("dark")
+                btn.textContent ="Dark Mode"
+                btn.style.backgroundColor="#0b0b0b"
+                btn.style.color="red"
+            }
+        })
+    </script>
 </body>
 </html>
